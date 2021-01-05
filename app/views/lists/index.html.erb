@@ -1,0 +1,44 @@
+
+<br/>
+<table class="table table-bordered table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th>Description</th> 
+      <th colspan='2'>Tools</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lists.each do |list| %>
+      <% if list.completed %>
+        <tr class="table-secondary">
+          <td class="striker"><%= link_to list.description, list %></td>   
+          <td> 
+            <%= form_with(model: list) do |form| %>
+                <%= form.submit "Uncross" %>
+                <%= form.check_box :completed, :checked => false, :style => "visibility: hidden" %>
+              <% end %>
+          </td>  
+          <td><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% else %>
+        <tr>
+          <td><%= link_to list.description, list %></td>   
+          <td>
+            <%= form_with(model: list) do |form| %>
+              <%= form.submit "Cross Off" %>
+              <%= form.check_box :completed, :checked => true, :style => "visibility: hidden" %>
+            <% end %>
+          </td>  
+          <td><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+<br/>
+<%= link_to 'Delete Marked Items', home_delete_marked_path, data: { confirm: 'Are you sure?' } %> 
+<%= link_to 'Delete All Items', home_delete_all_path, data: { confirm: 'Are you sure?' } %> 
+
+
+
