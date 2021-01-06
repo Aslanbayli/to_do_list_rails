@@ -1,3 +1,5 @@
+<%
+=begin%>
 <%= form_with(model: list) do |form| %>
   <% if list.errors.any? %>
     <div id="error_explanation">
@@ -20,8 +22,40 @@
     <%= form.label :completed %>
     <%= form.check_box :completed %>
   </div>
+  <% end %> 
+<%
+=end %>
 
-  <div class="actions">
-    <%= form.submit %>
+<%= form_with(model: list) do |form| %>
+  <% if list.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(list.errors.count, "error") %> prohibited this list from being saved:</h2>
+
+      <ul>
+        <% list.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <div class="bordered">
+    <div class="field">
+      <%= form.label :description, class:"form-label" %>
+      <%= form.text_field :description, class:"form-control" %>
+    </div>
+
+    <br/>
+
+    <div class="field">
+      <%= form.label :completed, class:"form-check-label" %>
+      <%= form.check_box :completed, class:"form-check-input" %>
+    </div>
+
+    <br/>
+    <div class="actions">
+      <%= form.submit class:"btn btn-primary" %>
+    </div>
   </div>
+  
 <% end %>

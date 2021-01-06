@@ -1,6 +1,17 @@
-<h1>Editing List</h1>
 
-<%= render 'form', list: @list %>
 
-<%= link_to 'Show', @list %> |
-<%= link_to 'Back', lists_path %>
+
+
+<div class="card">
+  <div class="card-header">
+    <h1>Editing List</h1>
+  </div>
+    <%= render 'form', list: @list %>
+
+
+    
+  </div>
+    <br/>
+    <%= link_to 'Show', @list, class:"btn btn-success" %>
+    <%= link_to 'Back', root_path, class:"btn btn-success", style:'margin-left: 5px' %>
+</div>

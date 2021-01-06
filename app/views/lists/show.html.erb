@@ -9,5 +9,5 @@
   <%= @list.completed %>
 </p>
 
-<%= link_to 'Edit', edit_list_path(@list) %> |
-<%= link_to 'Back', lists_path %>
+<%= link_to 'Edit', edit_list_path(@list), class:"btn btn-success" %>
+<%= link_to 'Back', edit_list_path(@list), class:"btn btn-success", style:"margin-left: 5px" %>
