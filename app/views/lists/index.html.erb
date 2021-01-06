@@ -15,11 +15,11 @@
           <td class="striker"><%= link_to list.description, edit_list_path(list), style:"text-decoration: none; color: black" %></td>   
           <td> 
             <%= form_with(model: list) do |form| %>
-                <%= form.submit "Uncross", class:"btn btn-outline-primary btn-sm" %>
+                <%= form.submit "Uncross ", class:"btn btn-outline-primary btn-sm" %>
                 <%= form.check_box :completed, :checked => false, :style => "visibility: hidden"%>
               <% end %>
           </td>  
-          <td><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' }, style:"text-decoration: none", class:"btn btn-outline-danger btn-sm"  %></td>
+          <td><%= link_to 'Delete', list, method: :delete, data: { confirm: 'Are you sure?' }, style:"text-decoration: none", class:"btn btn-outline-danger btn-sm"  %></td>
         </tr>
       <% else %>
         <tr class="table-light">
@@ -30,7 +30,7 @@
               <%= form.check_box :completed, :checked => true, :style => "visibility: hidden"%>
             <% end %>
           </td>  
-          <td><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' }, style:"text-decoration: none", class:"btn btn-outline-danger btn-sm"   %></td>
+          <td><%= link_to 'Delete', list, method: :delete, data: { confirm: 'Are you sure?' }, style:"text-decoration: none", class:"btn btn-outline-danger btn-sm"   %></td>
         </tr>
       <% end %>
     <% end %>
