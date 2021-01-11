@@ -6,7 +6,7 @@ class HomeController < ApplicationController
     end
 
     def delete_all
-        @delete_all = List.all.destroy_all
+        @delete_all = List.destroy_all
         redirect_to root_url, notice: 'All items were successfully deleted.'
     end
 end
