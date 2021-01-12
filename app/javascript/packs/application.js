@@ -11,3 +11,18 @@ import "channels";
 Rails.start();
 Turbolinks.start();
 ActiveStorage.start();
+
+// var sentence = [];
+// var form_val = document.getElementsByClassName("type");
+
+// document.addEventListener("keypress", function (event) {
+//   sentence.push(event.key);
+//   console.log(sentence);
+//   form_val[0].value = sentence.join("");
+// });
+
+// function checkSubmit(e) {
+//   if (e && e.keyCode == 13) {
+//     document.forms[0].submit();
+//   }
+// }
